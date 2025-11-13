@@ -1,19 +1,61 @@
 {
-  "users": [
-    { "id": "1", "name": "Student 1", "image": "pic1.jpg" },
-    { "id": "2", "name": "Student 2", "image": "pic2.jpg" },
-    { "id": "3", "name": "Student 3" },
-    { "id": "4", "name": "Student 4" }
-  ],
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
   "profile": {
-    "name": "typicode"
-  }
+    "name": "Gabriel Nehemia Kaunang",
+    "title": "Student of Informatics at Universitas Klabat",
+    "nim": "20 years old",
+    "profileImage": "image/profile.jpg",
+    "about": [
+      "Passionate Computer Science student focused on Front-End Development.",
+      "I specialize in building interactive and responsive user experiences with React, TypeScript, and Tailwind CSS. I thrive on learning new technologies to build efficient, user-friendly applications.",
+      "My philosophy: Great design combined with quality code creates outstanding products. Let's build something amazing."
+    ]
+  },
+  "academicInfo": {
+    "university": "Universitas Klabat",
+    "studyProgram": "Informatics",
+    "class": "Front-End",
+    "academicYear": "2025"
+  },
+  "footer": {
+    "copyright": "© 2025 Gabriel Kaunang. All rights reserved.",
+    "builtWith": "Built with Tailwind CSS and React.js"
+  },
+  "skills": [
+    {
+      "id": 1,
+      "name": "React JS",
+      "category": "Framework Javascript",
+      "icon": "/image/icons/react.svg"
+    },
+    {
+      "id": 2,
+      "name": "TailwindCSS",
+      "category": "CSS Framework",
+      "icon": "/image/icons/tailwind.svg"
+    },
+    {
+      "id": 3,
+      "name": "Javascript",
+      "category": "Language",
+      "icon": "/image/icons/javascript.svg"
+    },
+    {
+      "id": 4,
+      "name": "Node JS",
+      "category": "Runtime Build",
+      "icon": "/image/icons/nodejs.svg"
+    },
+    {
+      "id": 5,
+      "name": "Visual Studio Code",
+      "category": "Code Editor",
+      "icon": "/image/icons/vscode.svg"
+    },
+    {
+      "id": 6,
+      "name": "Figma",
+      "category": "Design App",
+      "icon": "/image/icons/figma.svg"
+    }
+  ]
 }
