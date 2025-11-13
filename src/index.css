@@ -1,1 +1,12 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ini adalah bagian yang akan memperbaiki masalah Anda */
+@layer base {
+  body {
+    /* Ini akan membuat background halaman menjadi abu-abu gelap */
+    @apply bg-slate-900;
+  }
+}

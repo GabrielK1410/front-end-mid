@@ -3,9 +3,11 @@ import SkillCard from "./SkillCard/SkillCard.jsx";
 
 const Skills = ({ skills }) => {
   return (
-    <section className="mt-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">My Tools</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <section>
+      <h2 className="text-4xl sm:text-5xl font-bold text-[#004D98] mb-6">
+        My Skill
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {skills.map((skill) => (
           <SkillCard
             key={skill.id}

@@ -2,18 +2,31 @@ import React from "react";
 
 const Header = ({ profile }) => {
   return (
-    <header className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
-      <img
-        className="w-28 h-28 rounded-full border-4 border-gray-200"
-        src={profile.profileImage}
-        alt={profile.name}
-      />
+    // Layout 2 kolom
+    <header className="flex flex-col-reverse sm:flex-row items-center justify-between gap-8">
+      {/* Kolom Teks (kiri) */}
       <div className="text-center sm:text-left">
-        <h1 className="text-3xl font-bold text-gray-900">{profile.name}</h1>
-        <p className="text-lg text-gray-600 mt-1">{profile.title}</p>
-        <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium mt-2 px-3 py-1 rounded-full">
-          {profile.nim}
-        </span>
+        {/* === PERUBAHAN DI SINI === */}
+        {/* Mengganti 'text-white' menjadi 'text-[#004D98]' */}
+        <h1 className="text-4xl sm:text-5xl font-bold text-[#004D98] mb-6">
+          {profile.name}
+        </h1>
+        {/* ========================== */}
+
+        {/* Judul dengan aksen warna cyan (teal) */}
+        <p className="mt-2 text-2xl text-[#A50044] mb-1">{profile.title}</p>
+
+        <p className="mt-2 text-lg text-slate-400 mb-3">{profile.nim}</p>
+      </div>
+
+      {/* Kolom Foto (kanan) */}
+      <div className="flex-shrink-0">
+        <img
+          className="w-40 h-40 rounded-full object-cover border-4 border-slate-700
+                     shadow-lg shadow-cyan-500/30"
+          src={profile.profileImage}
+          alt={profile.name}
+        />
       </div>
     </header>
   );
