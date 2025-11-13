@@ -12,8 +12,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // ... (Logika useEffect, if(loading), if(error) Anda tetap sama)
-  // ... (Tidak perlu diubah)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -46,15 +44,13 @@ const App = () => {
       </div>
     );
   }
-
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        Gagal mengambil data. Cek koneksi ke json-server port 3000.
+        Gagal mengambil data. Cek json-server.
       </div>
     );
   }
-
   if (!profile || !academic || !footer || !skills) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -64,17 +60,16 @@ const App = () => {
   }
 
   return (
-    // === MODIFIKASI HANYA DI SINI ===
-    // Kita pakai arbitrary values [kode_warna] langsung
-    // Ini membuat gradient dari merah (#6B0000) ke merah lebih gelap (#5A0000)
-    // agar cocok dengan foto profil Anda.
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-[#6B0000] to-[#5A0000]">
-      {/* Kartu putih Anda tetap sama */}
-      <div className="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-6 md:p-10">
+    // Layout 2 Kolom (Split-Screen)
+    <div className="max-w-7xl mx-auto md:grid md:grid-cols-3 md:gap-12 p-8 md:p-12">
+      {/* KOLOM KIRI (Statis) - 1/3 Lebar */}
+      <aside className="md:col-span-1 md:sticky md:top-12 h-screen">
         <Header profile={profile} />
+      </aside>
 
+      {/* KOLOM KANAN (Scroll) - 2/3 Lebar */}
+      <div className="md:col-span-2 space-y-16 mt-12 md:mt-0">
         <Main about={profile.about} academic={academic} skills={skills} />
-
         <Footer footer={footer} />
       </div>
     </div>

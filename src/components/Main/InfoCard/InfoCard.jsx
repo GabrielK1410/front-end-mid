@@ -2,18 +2,15 @@ import React from "react";
 
 const InfoCard = ({ title, value }) => {
   return (
-    // === KARTU BARU (DARK MODE) ===
-    // Ganti total dari 'bg-white'
+    // Kartu dark mode dengan aksen border merah di kiri
     <div
       className="bg-slate-800 p-6 rounded-lg shadow-lg
-                    border-t-2 border-cyan-500"
+                    border-l-4 border-[#A50044]
+                    transition-all duration-300 hover:bg-slate-700"
     >
-      {/* Teks title (atas) */}
       <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
         {title}
       </h3>
-
-      {/* Teks value (bawah) */}
       <p className="text-2xl font-semibold text-white mt-2">{value}</p>
     </div>
   );

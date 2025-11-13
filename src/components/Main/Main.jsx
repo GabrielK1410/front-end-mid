@@ -2,28 +2,33 @@ import React from "react";
 import InfoCard from "./InfoCard/InfoCard.jsx";
 import Skills from "./Skills/Skills.jsx";
 
+// Judul Section Kustom (dengan aksen merah)
+const SectionTitle = ({ children }) => (
+  <h2
+    className="text-3xl font-bold text-white mb-8 relative
+                 before:content-[''] before:absolute before:left-0 before:bottom-[-4px] 
+                 before:w-16 before:h-1 before:bg-[#A50044]"
+  >
+    {children}
+  </h2>
+);
+
 const Main = ({ about, academic, skills }) => {
   return (
-    // Kita beri jarak 12 (48px) antar section di dalam Main
-    <main className="space-y-12">
-      {/* Bagian Tentang Saya (Desain Ulang) */}
+    <main className="space-y-16">
+      {/* Bagian Tentang Saya */}
       <section>
-        <h2 className="text-4xl sm:text-5xl font-bold text-[#004D98] mb-6">
-          About Me
-        </h2>
-        {/* Kita tidak perlu box abu-abu lagi */}
-        <div className="space-y-3  text-lg  text-black">
+        <SectionTitle>About Me</SectionTitle>
+        <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
           {about.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
       </section>
 
-      {/* Bagian Informasi Akademik (Desain Ulang) */}
+      {/* Bagian Informasi Akademik */}
       <section>
-        <h2 className="text-4xl sm:text-5xl font-bold text-[#004D98] mb-6">
-          Academic Information
-        </h2>
+        <SectionTitle>Academic Information</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <InfoCard title="University" value={academic.university} />
           <InfoCard title="Study Program" value={academic.studyProgram} />
@@ -32,7 +37,7 @@ const Main = ({ about, academic, skills }) => {
         </div>
       </section>
 
-      {/* Bagian Skills (akan di-style oleh filenya sendiri) */}
+      {/* Bagian Skills */}
       <Skills skills={skills} />
     </main>
   );
